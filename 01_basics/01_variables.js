@@ -1,4 +1,4 @@
-const accountId = 144553
+const accountId = 144553 //const is something which cannot be changes
 let accountEmail = "honest.pratham11.com"
 var accountPassword = "1234"
 accountCity = "JaipuR"
@@ -15,4 +15,5 @@ console.table([accountId,accountEmail,accountPassword, accountCity, accountState
 
 /*in todays time prefered not to use var
 because of issue in block scope and funcitional scope
+if we want to change a city in a particular scope but in var it will change everywhere
 */
