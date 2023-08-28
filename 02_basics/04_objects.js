@@ -68,7 +68,7 @@ const course = {
 
 const {courseInstructor: instructor} = course
 
-console.log(courseInstructor);
+// console.log(courseInstructor);
 console.log(instructor);//kisi bhi value ko destructure kar sakta hai
 
 // {json keys and value are string

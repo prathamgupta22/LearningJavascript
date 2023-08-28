@@ -1,7 +1,7 @@
 //singleton
 //object literal method to declare object
 //hamesa . sa hi access karenga object ko but in some cases like symbol we use square bracket[] 
-const mySym = Sumbol("key1");
+const mySym = Symbol("key1");
 
 const JsUser = {
     name:"hitest",
