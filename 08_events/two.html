@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #stop {
+        width: 50px;
+        height: 20px;
+        background-color: aquamarine;
+        border: 0;
+        color: antiquewhite;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Async projects</h1>
+    <button id="stop">Stop</button>
+    <script>
+      //handler is a function that doesnt have a name
+
+      // it will print after 2 sec
+      // setTimeout(function () {
+      //   console.log("hitest");
+      // }, 2000);
+
+      // set intervall every after 2 sec it will print
+      // setInterval(() => {
+      //   console.log("nanana");
+      // }, 2000);
+
+      // it will change the text after 4 second
+      const changeText = function () {
+        document.querySelector("h1").innerHTML = "Learning js form hitesh sir";
+      };
+
+      // setTimeout(changeText, 4000);
+
+      //clear timeout remove settimeout
+
+      const changeMe = setTimeout(changeText, 4000);
+
+      document.querySelector("#stop").addEventListener("click", function () {
+        clearTimeout(changeMe);
+        console.log("Stooped");
+      });
+    </script>
+  </body>
+</html>

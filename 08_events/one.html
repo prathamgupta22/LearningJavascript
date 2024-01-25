@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htnml Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+    <button id="btn1">one</button>
+  </body>
+  <script>
+    // document.getElementById("owl").onclick = () => {
+    //   alert("owl clicked");
+    // };
+
+    //best method to handle event
+    // document.getElementById("owl").addEventListener("click", function () {
+    //   alert("owl clicked again");
+    // });
+
+    // attachEvent()
+    // jQuery - on
+
+    document.getElementById("owl").addEventListener(
+      "click",
+      function (e) {
+        console.log("clicked inside the ul");
+      },
+      false
+    );
+
+    // btn1.addEventListener("click", () => {
+    //   console.log("btn 1 pressed");
+    // });
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+
+    //     document.getElementById('google'): This part gets the HTML element with the ID 'google'.
+
+    // addEventListener('click', function(e) {...}, false): This part adds an event listener for the 'click' event on the selected element. When the element is clicked, the provided function will be executed.
+
+    // function(e) {...}: This is the event handler function that takes an event object (e) as a parameter.
+
+    // e.preventDefault(): This method is used to prevent the default action associated with the event. In this case, it prevents the default action of clicking on a link, which would typically navigate to a new page.
+
+    // e.stopPropagation(): This method stops the event from propagating (bubbling up or capturing down) the DOM hierarchy. It prevents the event from reaching other elements or event listeners.
+
+    // console.log("google clicked");: This line logs a message to the console when the 'google' element is clicked.
+
+    document.querySelector("#images").addEventListener("click", function (e) {
+      console.log(e.target.tagName);
+      if (e.target.tagName === "IMG") {
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+      }
+    });
+
+    //removeIt.parentNode.removeChild(removeIt)
+  </script>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htnml Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+
+    document.querySelector("#images").addEventListener("click", function (e) {
+      console.log(e.target.tagName);
+      if (e.target.tagName === "IMG") {
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+      }
+    });
+
+    //removeIt.parentNode.removeChild(removeIt)
+  </script>
+</html>

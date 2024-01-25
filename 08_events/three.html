@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Learning Js</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+      // setInterval(function () {
+      //   console.log("Pratham", Date.now());
+      // }, 2000);
+
+      //Setinterval also have third parameter
+
+      const sayDate = function (str) {
+        console.log(str, Date.now());
+      };
+      const intervalid = setInterval(sayDate, 1000, "hey");
+
+      clearInterval(intervalid);
+    </script>
+  </body>
+</html>
