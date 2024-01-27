@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="input">Enter Todo</label>
+    <input type="text" id="task" />
+    <button id="addTask">Submit</button>
+    <ul id="task_list"></ul>
+
+    <script>
+      const task = document.getElementById("task");
+      const addButton = document.getElementById("addTask");
+      const taskList = document.getElementById("task_list");
+      let tasks = [];
+
+      addButton.addEventListener("click", () => {
+        let newTask = task.value;
+        if (newTask !== "") {
+          tasks.push(newTask);
+          task.value = "";
+          renderList();
+        }
+      });
+      function renderList() {
+        taskList.innerHTML = "";
+        for (let i = 0; i < tasks.length; i++) {
+          let li = document.createElement("li");
+          li.innerHTML = `${tasks[i]} <button onclick="remove(${i})">Remove</button>`;
+          console.log(li);
+          taskList.appendChild(li);
+        }
+      }
+      function remove(index) {
+        tasks = tasks.filter((task, i) => index != i);
+        renderList();
+      }
+    </script>
+  </body>
+</html>
